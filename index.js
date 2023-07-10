@@ -1,8 +1,6 @@
-import { updateTime } from './modules/dateAndTime.js';
-import { addNewhandleClick } from './modules/userInterface.js';
-import { contactHandleClick } from './modules/userInterface.js';
-import { titleFunction } from './modules/localStorage.js';
-import { authorFunction } from './modules/localStorage.js';
+import updateTime from './modules/dateAndTime.js';
+import { addNewhandleClick, contactHandleClick } from './modules/userInterface.js';
+import { titleFunction, authorFunction } from './modules/localStorage.js';
 
 class BookManager {
   static init() {
@@ -73,7 +71,6 @@ class BookManager {
     setInterval(() => {
       updateTime(timeP);
     }, 1000);
-    
 
     const storedBooks = JSON.parse(window.localStorage.getItem('books'));
     if (storedBooks) {
@@ -98,7 +95,6 @@ class BookManager {
     }
   }
 
-  
   addBook() {
     if (!this.bookAddition.disabled) {
       const title = this.titleInput.value.trim();

@@ -1,9 +1,9 @@
-function titleFunction(){
+function titleFunction() {
   window.localStorage.setItem('title', this.titleInput.value);
-};
+}
 
-function authorFunction(){
+function authorFunction() {
   window.localStorage.setItem('author', this.authorInput.value);
-};
+}
 
-export { titleFunction, authorFunction};
+export { titleFunction, authorFunction };

@@ -6,4 +6,4 @@ function updateTime(timeP) {
   timeP.innerHTML = dateTime;
 }
 
-export { updateTime };
+export default updateTime;
