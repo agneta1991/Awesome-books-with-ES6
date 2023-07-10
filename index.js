@@ -1,4 +1,6 @@
 import { updateTime } from './modules/dateAndTime.js';
+import { addNewhandleClick } from './modules/addNewuserInterface.js';
+import { contactHandleClick } from './modules/contactUserInterface.js';
 
 class BookManager {
   static init() {
@@ -22,17 +24,8 @@ class BookManager {
       this.inputsdiv.style.display = 'none';
       this.contactForm.style.display = 'none';
     });
-    this.addNew.addEventListener('click', () => {
-      this.inputsdiv.style.display = 'flex';
-      this.dynamicList.style.display = 'none';
-      this.contactForm.style.display = 'none';
-    });
-
-    this.contact.addEventListener('click', () => {
-      this.contactForm.style.display = 'flex';
-      this.inputsdiv.style.display = 'none';
-      this.dynamicList.style.display = 'none';
-    });
+    this.addNew.addEventListener('click', addNewhandleClick.bind(this));
+    this.contact.addEventListener('click', contactHandleClick.bind(this));
 
     this.addBook = this.addBook.bind(this);
     this.updateButtonState = this.updateButtonState.bind(this);
