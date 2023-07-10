@@ -1,4 +1,3 @@
-
 const titleFunction = (titleInput) => {
   window.localStorage.setItem('title', titleInput.value);
 };

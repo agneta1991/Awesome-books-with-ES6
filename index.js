@@ -1,18 +1,18 @@
-import { DateTime } from '../node_modules/luxon/src/luxon.js';
+import { DateTime } from './node_modules/luxon/src/luxon.js';
 import { titleFunction, authorFunction } from './modules/localStorage.js';
-import { addNewhandleClick, contactHandleClick, listitemHandleClick} from './modules/userInterface.js';
+import { addNewhandleClick, contactHandleClick, listitemHandleClick } from './modules/userInterface.js';
 
 const updateTime = (timeP) => {
   const now = DateTime.now();
-  const year = now.year;
-  const month = now.month;
-  const day = now.day;
-  const hour = now.hour;
-  const minute = now.minute;
-  const second = now.second;
+  const { year } = now;
+  const { month } = now;
+  const { day } = now;
+  const { hour } = now;
+  const { minute } = now;
+  const { second } = now;
   const fullDate = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
   timeP.innerHTML = fullDate;
-  }
+};
 
 class BookManager {
   static init() {
@@ -32,16 +32,14 @@ class BookManager {
     this.contact = document.querySelector('#contact');
     this.contactForm = document.querySelector('.contact-form');
 
-
     this.listitem.addEventListener('click', () => {
       listitemHandleClick(this.contactForm, this.inputsdiv, this.dynamicList);
     });
 
-
     this.addNew.addEventListener('click', () => {
       addNewhandleClick(this.inputsdiv, this.dynamicList, this.contactForm);
     });
-    
+
     this.contact.addEventListener('click', () => {
       contactHandleClick(this.contactForm, this.inputsdiv, this.dynamicList);
     });
@@ -69,7 +67,7 @@ class BookManager {
     this.titleInput.addEventListener('input', () => {
       titleFunction(this.titleInput);
     });
-    
+
     this.authorInput.addEventListener('input', () => {
       authorFunction(this.authorInput);
     });

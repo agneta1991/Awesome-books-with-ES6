@@ -11,9 +11,9 @@ const contactHandleClick = (contactForm, inputsdiv, dynamicList) => {
 };
 
 const listitemHandleClick = (contactForm, inputsdiv, dynamicList) => {
-dynamicList.style.display = 'block';
-inputsdiv.style.display = 'none';
-contactForm.style.display = 'none';
+  dynamicList.style.display = 'block';
+  inputsdiv.style.display = 'none';
+  contactForm.style.display = 'none';
 };
 
 export { contactHandleClick, addNewhandleClick, listitemHandleClick };
