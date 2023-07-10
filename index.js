@@ -1,6 +1,8 @@
 import { updateTime } from './modules/dateAndTime.js';
-import { addNewhandleClick } from './modules/addNewuserInterface.js';
-import { contactHandleClick } from './modules/contactUserInterface.js';
+import { addNewhandleClick } from './modules/userInterface.js';
+import { contactHandleClick } from './modules/userInterface.js';
+import { titleFunction } from './modules/localStorage.js';
+import { authorFunction } from './modules/localStorage.js';
 
 class BookManager {
   static init() {
@@ -47,12 +49,8 @@ class BookManager {
       this.authorInput.value = storedAuthor;
     }
 
-    this.titleInput.addEventListener('input', () => {
-      window.localStorage.setItem('title', this.titleInput.value);
-    });
-    this.authorInput.addEventListener('input', () => {
-      window.localStorage.setItem('author', this.authorInput.value);
-    });
+    this.titleInput.addEventListener('input', titleFunction.bind(this));
+    this.authorInput.addEventListener('input', authorFunction.bind(this));
   }
 
   updateButtonState() {
@@ -100,6 +98,7 @@ class BookManager {
     }
   }
 
+  
   addBook() {
     if (!this.bookAddition.disabled) {
       const title = this.titleInput.value.trim();
