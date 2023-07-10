@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Awesome Books</title>
+</head>
+<body>
+  <nav>
+    <h2>Awesome Books</h2>
+    <ul>
+      <li id="list">List</li>
+      <li id="addnew">Add new</li>
+      <li id="contact">Contact</li>
+    </ul>
+  </nav>
+  <p id="time"></p>
+<main id= "mainDiv">
+  <section class="mainContent">
+    
+    <div class="dynamicList">
+      <h1>All Awsome Books</h1>
+    </div>
+    
+    <div class="inputsDiv">
+      <h2>Add a new book</h2>
+      <h4>please click on the List link to see the books</h4>
+      <input id="author" type="name" placeholder="Author" required>
+      <input id="title" type="title" placeholder="Book title" required>
+      <button id="addBook" type = "button"> Add </button>
+    </div>
+  </section>
+</main>
+<div class="contact-form">
+  <h2>Contact information</h2>
+  <p>If you have any questions or suggestions feel free to get in touch to reach out you can :</p>
+  <ul>
+    <li>Email us at email@email.com</li>
+    <li>By telephone +0000000000000</li>
+    <li>Or you can pop in, and have a chat @ Example street, Example City at a Fictional Country</li>
+  </ul>
+</div>
+<footer>
+  <p> copyright @Mohamed&Agneta
+  </p>
+</footer>
+  <script type="module" src="index.js"></script>
+  <script type="module" src="./modules/userInterface.js"></script>
+  <script type="module" src="./modules/localStorage.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputsDiv {
+  margin: 0 auto;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inputsDiv h4 {
+  color: chocolate;
+  text-transform: capitalize;
+}
+
+#addBook {
+  padding: 0.1em 0.5em;
+}
+
+.dynamicList > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 3%;
+  border: 0.5px solid grey;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.dynamicList {
+  margin: 1.5em;
+  border: 2px solid black;
+  display: none;
+}
+
+.dynamicList .active {
+  display: block;
+}
+
+.dynamicList span {
+  border-bottom: 1px solid gray;
+  display: block;
+  margin: 0.6em 0;
+}
+
+input {
+  display: block;
+  padding: 0.4em 0;
+  margin: 0.5em 0;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.removebtn,
+#addBook {
+  box-shadow: 5px 2px 2px black;
+}
+
+nav {
+  padding: 0.5em;
+  background-color: lightgray;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 0.5em;
+  cursor: pointer;
+  border-right: 1px solid black;
+}
+
+#time {
+  text-align: right;
+  padding: 0.4em 0.8em;
+}
+
+footer {
+  border: 2px solid black;
+  padding: 0.2em;
+  position: fixed;
+  bottom: 0.4em;
+  width: 100%;
+}
+
+.contact-form {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em;
+  width: 70%;
+  margin: 0 auto;
+  font-weight: 600;
+  gap: 1em;
+}
+
+.contact-form h2 {
+  padding-bottom: 1em;
+}
+
+.contact-form ul {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 2.4em;
+  line-height: 2.4rem;
+}
+
+.contact-form ul li {
+  list-style: disc;
+}
+
+nav ul li:nth-last-child(1) {
+  border: none;
+}
