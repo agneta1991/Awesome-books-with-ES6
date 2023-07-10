@@ -1,13 +1,19 @@
-const addNewhandleClick = () => {
-  this.inputsdiv.style.display = 'flex';
-  this.dynamicList.style.display = 'none';
-  this.contactForm.style.display = 'none';
-}
+const addNewhandleClick = (inputsdiv, dynamicList, contactForm) => {
+  inputsdiv.style.display = 'flex';
+  dynamicList.style.display = 'none';
+  contactForm.style.display = 'none';
+};
 
-const contactHandleClick = () => {
-  this.contactForm.style.display = 'flex';
-  this.inputsdiv.style.display = 'none';
-  this.dynamicList.style.display = 'none';
-}
+const contactHandleClick = (contactForm, inputsdiv, dynamicList) => {
+  contactForm.style.display = 'flex';
+  inputsdiv.style.display = 'none';
+  dynamicList.style.display = 'none';
+};
 
-export { contactHandleClick, addNewhandleClick };
+const listitemHandleClick = (contactForm, inputsdiv, dynamicList) => {
+dynamicList.style.display = 'block';
+inputsdiv.style.display = 'none';
+contactForm.style.display = 'none';
+};
+
+export { contactHandleClick, addNewhandleClick, listitemHandleClick };

@@ -1,6 +1,18 @@
-import updateTime from './modules/dateAndTime.js';
-import { addNewhandleClick, contactHandleClick } from './modules/userInterface.js';
+import { DateTime } from '../node_modules/luxon/src/luxon.js';
 import { titleFunction, authorFunction } from './modules/localStorage.js';
+import { addNewhandleClick, contactHandleClick, listitemHandleClick} from './modules/userInterface.js';
+
+const updateTime = (timeP) => {
+  const now = DateTime.now();
+  const year = now.year;
+  const month = now.month;
+  const day = now.day;
+  const hour = now.hour;
+  const minute = now.minute;
+  const second = now.second;
+  const fullDate = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+  timeP.innerHTML = fullDate;
+  }
 
 class BookManager {
   static init() {
@@ -19,13 +31,20 @@ class BookManager {
     this.addNew = document.querySelector('#addnew');
     this.contact = document.querySelector('#contact');
     this.contactForm = document.querySelector('.contact-form');
+
+
     this.listitem.addEventListener('click', () => {
-      this.dynamicList.style.display = 'block';
-      this.inputsdiv.style.display = 'none';
-      this.contactForm.style.display = 'none';
+      listitemHandleClick(this.contactForm, this.inputsdiv, this.dynamicList);
     });
-    this.addNew.addEventListener('click', addNewhandleClick.bind(this));
-    this.contact.addEventListener('click', contactHandleClick.bind(this));
+
+
+    this.addNew.addEventListener('click', () => {
+      addNewhandleClick(this.inputsdiv, this.dynamicList, this.contactForm);
+    });
+    
+    this.contact.addEventListener('click', () => {
+      contactHandleClick(this.contactForm, this.inputsdiv, this.dynamicList);
+    });
 
     this.addBook = this.addBook.bind(this);
     this.updateButtonState = this.updateButtonState.bind(this);
@@ -47,8 +66,13 @@ class BookManager {
       this.authorInput.value = storedAuthor;
     }
 
-    this.titleInput.addEventListener('input', titleFunction.bind(this));
-    this.authorInput.addEventListener('input', authorFunction.bind(this));
+    this.titleInput.addEventListener('input', () => {
+      titleFunction(this.titleInput);
+    });
+    
+    this.authorInput.addEventListener('input', () => {
+      authorFunction(this.authorInput);
+    });
   }
 
   updateButtonState() {
